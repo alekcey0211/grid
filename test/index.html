@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			*,
+			*::after,
+			*::before {
+				margin: 0;
+				padding: 0;
+        box-sizing: border-box;
+        border: 0;
+			}
+
+			body {
+				min-height: 100vh;
+			}
+
+			.container,
+			.container-fluid,
+			.container-sm,
+			.container-md,
+			.container-lg,
+			.container-xl,
+			.container-xxl {
+				--bs-gutter-x: 32px;
+				width: 100%;
+				padding-right: calc(var(--bs-gutter-x) / 2);
+				padding-left: calc(var(--bs-gutter-x) / 2);
+				margin-right: auto;
+				margin-left: auto;
+			}
+
+			@media (min-width: 576px) {
+				.container,
+				.container-sm {
+					max-width: 540px;
+				}
+			}
+
+			@media (min-width: 768px) {
+				.container,
+				.container-sm,
+				.container-md {
+					max-width: 720px;
+				}
+			}
+
+			@media (min-width: 992px) {
+				.container,
+				.container-sm,
+				.container-md,
+				.container-lg {
+					max-width: 960px;
+				}
+			}
+
+			@media (min-width: 1200px) {
+				.container,
+				.container-sm,
+				.container-md,
+				.container-lg,
+				.container-xl {
+					max-width: 1140px;
+				}
+			}
+
+			@media (min-width: 1400px) {
+				.container,
+				.container-sm,
+				.container-md,
+				.container-lg,
+				.container-xl,
+				.container-xxl {
+					max-width: 1320px;
+				}
+			}
+
+			.row {
+				--bs-gutter-x: 32px;
+				--bs-gutter-y: 0;
+				display: flex;
+				flex-wrap: wrap;
+				margin-top: calc(var(--bs-gutter-y) * -1);
+				margin-right: calc(var(--bs-gutter-x) / -2);
+				margin-left: calc(var(--bs-gutter-x) / -2);
+			}
+
+			.row > * {
+				box-sizing: border-box;
+				flex-shrink: 0;
+				width: 100%;
+				max-width: 100%;
+				padding-right: calc(var(--bs-gutter-x) / 2);
+				padding-left: calc(var(--bs-gutter-x) / 2);
+				margin-top: var(--bs-gutter-y);
+			}
+
+			.col-1 {
+				flex: 0 0 auto;
+				width: 8.333333%;
+			}
+
+			.grid {
+				display: grid;
+				grid-template-columns: repeat(12, 1fr);
+				grid-column-gap: 32px;
+				margin: 32px 0;
+			}
+
+			.grid .col::after {
+				background-color: lightblue;
+			}
+			.row .col::after {
+				background-color: lightgreen;
+			}
+
+			.col::after {
+				content: '';
+				height: 200px;
+				width: 100%;
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="grid">
+				<div class="col"></div>
+				<div class="col"></div>
+				<div class="col"></div>
+				<div class="col"></div>
+				<div class="col"></div>
+				<div class="col"></div>
+				<div class="col"></div>
+				<div class="col"></div>
+				<div class="col"></div>
+				<div class="col"></div>
+				<div class="col"></div>
+				<div class="col"></div>
+			</div>
+			<div class="row">
+				<div class="col col-1"></div>
+				<div class="col col-1"></div>
+				<div class="col col-1"></div>
+				<div class="col col-1"></div>
+				<div class="col col-1"></div>
+				<div class="col col-1"></div>
+				<div class="col col-1"></div>
+				<div class="col col-1"></div>
+				<div class="col col-1"></div>
+				<div class="col col-1"></div>
+				<div class="col col-1"></div>
+				<div class="col col-1"></div>
+			</div>
+		</div>
+	</body>
+</html>
