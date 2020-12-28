@@ -1,6 +1,6 @@
 {
 	"name": "Turbo Grid Layout",
-	"version": "1.1",
+	"version": "1.2",
 	"description": "The Best extension for grid layout",
 	"background": {
 		"scripts": ["background.js"],

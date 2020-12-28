@@ -10,8 +10,7 @@
 			*::before {
 				margin: 0;
 				padding: 0;
-        box-sizing: border-box;
-        border: 0;
+				box-sizing: border-box;
 			}
 
 			body {
@@ -98,9 +97,40 @@
 				margin-top: var(--bs-gutter-y);
 			}
 
-			.col-1 {
+			.row > .col-1 {
 				flex: 0 0 auto;
 				width: 8.333333%;
+			}
+
+			.row-2,
+			.row {
+				--bs-gutter-x: 32px;
+				--bs-gutter-y: 32px;
+				display: grid;
+				grid-template-columns: repeat(12, 1fr);
+				grid-column-gap: var(--bs-gutter-x);
+				grid-row-gap: var(--bs-gutter-y);
+				margin-top: 32px;
+				margin-left: 0;
+				margin-right: 0;
+			}
+
+			.row-2 > .col-1,
+			.row > .col-1,
+			.row-2 > .col-2,
+			.row > .col-2 {
+				width: auto;
+				padding: 0;
+				margin: 0;
+			}
+
+			.row-2 > .col-1,
+			.row > .col-1 {
+				grid-column: span 1;
+			}
+			.row-2 > .col-2,
+			.row > .col-2 {
+				grid-column: span 2;
 			}
 
 			.grid {
@@ -115,6 +145,9 @@
 			}
 			.row .col::after {
 				background-color: lightgreen;
+			}
+			.row-2 .col::after {
+				background-color: lightskyblue;
 			}
 
 			.col::after {
@@ -142,6 +175,20 @@
 				<div class="col"></div>
 			</div>
 			<div class="row">
+				<div class="col col-1"></div>
+				<div class="col col-1"></div>
+				<div class="col col-1"></div>
+				<div class="col col-1"></div>
+				<div class="col col-1"></div>
+				<div class="col col-1"></div>
+				<div class="col col-1"></div>
+				<div class="col col-1"></div>
+				<div class="col col-1"></div>
+				<div class="col col-1"></div>
+				<div class="col col-1"></div>
+				<div class="col col-1"></div>
+			</div>
+			<div class="row-2">
 				<div class="col col-1"></div>
 				<div class="col col-1"></div>
 				<div class="col col-1"></div>
