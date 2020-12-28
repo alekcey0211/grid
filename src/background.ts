@@ -1,3 +1,5 @@
+import {} from 'chrome';
+
 chrome.runtime.onInstalled.addListener(() => {
 	chrome.storage.sync.set({
 		globalConfig: JSON.stringify({
@@ -28,6 +30,9 @@ chrome.runtime.onInstalled.addListener(() => {
 	});
 
 	chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+		if (!tab?.url?.startsWith('http')) {
+			return;
+		}
 		if (changeInfo.status == 'complete') {
 			chrome.tabs.executeScript(tabId, { file: 'tabs/startup.js' });
 		}

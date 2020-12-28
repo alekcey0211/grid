@@ -1,4 +1,6 @@
+import * as jscolor from '@eastdesire/jscolor';
 import { Config, addListenersToInputs } from './share';
+import {} from 'chrome';
 
 chrome.storage.sync.get('globalConfig', (data) => {
 	let config: Config = JSON.parse(data.globalConfig);
@@ -11,3 +13,7 @@ chrome.storage.sync.get('globalConfig', (data) => {
 		});
 	});
 });
+
+try {
+	jscolor();
+} catch (error) {}

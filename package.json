@@ -13,8 +13,8 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"@eastdesire/jscolor": "^2.4.1",
 		"@types/chrome": "0.0.127",
-		"jscolor": "^0.3.0",
 		"zip-folder": "^1.0.0"
 	},
 	"devDependencies": {

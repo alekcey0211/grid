@@ -1,4 +1,6 @@
+import * as jscolor from '@eastdesire/jscolor';
 import { addListenersToInputs, Config } from './share';
+import {} from 'chrome';
 
 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
 	document.getElementById('toggleGrid').addEventListener('click', () => {
@@ -34,3 +36,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
 		});
 	});
 });
+
+try {
+	jscolor();
+} catch (error) {}
